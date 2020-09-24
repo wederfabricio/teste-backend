@@ -1,93 +1,61 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-# Teste Backend GBLIX
+## About Laravel
 
-O desenvolvedor através do Framework PHP Laravel deverá mostrar noções desenvolvimento de uma API RESTful com interações via console.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Introdução
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Através da internet temos várias APIs disponíveis, tanto para informações públicas, como informações privadas, e hoje elas são utilizadas para as mais diversas funções: Autenticação, Validação de Dados, Consulta e Cálculos de Preços, Realização de Pagamentos, Cruzamento de Informações e até para Machine Learning.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-Para este teste iremos utilizar uma API pública relacionada ao Studio Ghibli, a sua documentação está disponível na seguinte URL: [https://ghibliapi.herokuapp.com/](https://ghibliapi.herokuapp.com/)
+## Learning Laravel
 
-Com ela iremos trabalhar com os blocos de informações de FILMES (FILMS) e PESSOAS (PEOPLE), todas outras informações podem ser ignoradas.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## DESENVOLVIMENTO
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-Usando a API informada anteriormente temos que desenvolver uma aplicação que DEVERÁ ter dois formatos de execução:
+## Laravel Sponsors
 
-- Comando Artisan, usando o seguinte nome: `api:crawl`
-- Agendado via schedule do Laravel à cada duas horas
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-Esse crawler DEVE salvar TODAS as informações básicas da API de filmes e seus respectivos personagens e formatar ela em banco de dados, a estrutura do banco para este teste fica à cargo do desenvolvedor. As informações a serem salvas são:
+### Premium Partners
 
-**Filme:**
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[OP.GG](https://op.gg)**
 
-- Nome do Filme
-- Descrição do Filme
-- Diretor
-- Produtor
-- Ano de Lançamento
-- Pontuação Rotten Tomato
-- Personagens
+## Contributing
 
-**Personagens:**
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-- Nome do Personagem
-- Genero
-- Idade
-- Cor dos Olhos
-- Cor do Cabelo
+## Code of Conduct
 
-### API
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-Usando as informações disponíveis no banco de dados DEVE-SE criar uma rota GET  `/people` que:
+## Security Vulnerabilities
 
-DEVE retornar as seguintes colunas:
-- Nome do Personagem
-- Idade do Personagem
-- Título do Filme
-- Ano de Lançamento do Filme
-- Pontuação Rotten Tomato
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-DEVE retornar os resultados baseado no parâmetro `fmt` ou `Header Accept`, onde:
--  html: Uma página HTML com a tabela
--  json: Estrutura JSON do resultado
--  csv: Um arquivo no formato CSV tabulado com ponto e vírgula (;
+## License
 
-PODERÁ filtrar a informação de alguma coluna usando o parâmetro `filter`
-
-PODERÁ alterar ordenação de alguma coluna usando o parâmetro `order`
-
-PODERÁ alterar a sequência da ordenação usando o parâmetro `sort`
-
-### CONSIDERAÇÕES
-
-O banco de dados DEVE ser criado via migration.
-
-É RECOMENDÁVEL que o sistema tenha suporte ao Seed (utilizando Model Factory) para exemplificação da estrutura.
-
-É RECOMENDÁVEL que a aplicação possua Unit-testing nativo do Laravel para garantir que o Eloquent esteja persistindo corretamente as informações.
-
-### GOSTAMOS
-
-- Reutilização de código;
-- Não reinventar a rota;
-- Legibilidade e performance contam;
-- Facades não são tão malvadas quanto parecem;
-- Aplicação da Metodologia SOLID;
-- Desenvolvimento usando Services/Repositories;    
-- Utilização de pacotes já existentes para responsabilidades complexas e extensíveis, exemplos: Manipulação de Imagem, Geração de Arquivos, Requisições à servidor remoto.
-
-## PRAZO E ENTREGA
-
-O prazo de entrega será combinado através da entrevista com nossa equipe.
-
-A entrega poderá ser realizada de duas formas:
-
- 1. Repositório público, ou não listado, em ferramentas como GitHub, Bitbucket ou Gitlab.
- 2. Anexo compactado através de email combinado em entrevista
-
-Este projeto não será utilizado para nenhum fim exceto a sua avaliação.
-
-Divirta-se. :)
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
